@@ -5,9 +5,9 @@ include("config.php");
 	   $sqlstr = "update gdutuser set category= '".$_POST[category]."', userid = '".$_POST[userid]."', name = '".$_POST[name]."',sex = '".$_POST[sex]."',unit= '".$_POST[unit]."',address= '".$_POST[address]."',tel= '".$_POST[tel]."', email = '".$_POST[email]."',uploadtime = '".$_POST[uptime]."' where userid = ".$_SESSION[userid];
 	   $arry=mysql_query($sqlstr,$conn);
 	    if ($arry){
-			echo "alert('信息修改成功')";
+			echo "alert('信息更改成功');document.getElementById('userInfo').onclick();";
 		}else{
-		echo "alert('信息修改失败')";
+		echo "alert('信息更改失败');document.getElementById('userInfo').onclick();";
 		}
 	};
 
@@ -39,7 +39,7 @@ include("config.php");
 				$lendsql="insert into userlent(id,bookid, bookname,type,author,press, userid,username, lentdate) values(NULL,'$bookid','$bookname','$type','$author','$press','$userid','$username','$now')";
 				mysql_query($lendsql,$conn) or die ("操作失败：".mysql_error());
 				mysql_query("update gdutbooks set lent=lent+1 where bookid='$bookid'",$conn);
-				echo "<p>借阅成功</p>";
+				echo "alert('借阅成功');document.getElementById('lentInfo').onclick();";
 			}
 		}
 	};
@@ -59,7 +59,7 @@ include("config.php");
 		$booksql="update gdutbooks set lent=lent-1 where bookid='$bookid'";
 		mysql_query($booksql,$conn) or die ("更新已借数量失败：".mysql_error());
 
-		echo '<p>还书成功</p>';
+		echo "alert('还书成功');document.getElementById('lentInfo').onclick();";
 	};
 
 $userid=$_SESSION["userid"];
@@ -67,15 +67,15 @@ $sql="select * from gdutuser where userid='$userid'";
 $rs=mysql_query($sql);
 $rows=mysql_fetch_assoc($rs);
 
-	if($_POST["password1"]){
-			if($rows["password"]==md5($_POST["password"])){
-				$password2=md5($_POST["password2"]);
+	if($_POST["passwordf"]){
+			if($rows["password"]==md5($_POST["passwordo"])){
+				$password2=md5($_POST["passwords"]);
 		        $sql="update gdutuser set password='$password2' where userid='$userid'";
 				mysql_query($sql);
-				echo "密码修改成功";	
+				echo "alert('密码修改成功');document.getElementById('userPsw').onclick();";	
 			}
-			else
-			{ echo '密码修改失败';
+			else{
+			 echo "alert('密码修改失败');document.getElementById('userPsw').onclick();";
 			}
 	};
 
