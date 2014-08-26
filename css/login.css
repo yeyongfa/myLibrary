@@ -1,0 +1,103 @@
+body {
+  padding-top: 200px;
+  padding-bottom: 40px;
+  background-color: #4aa7f3;
+  color:#fff;
+}
+
+#loginArea{
+	max-width: 400px;
+	padding: 15px;
+	margin: 0 auto;
+	display: block;
+}
+
+#log_code{
+	position: relative;
+	font-size: 16px;
+	height: auto;
+	padding: 10px;
+	border:1px solid #ccc;
+	border-radius:4px;
+	margin-top: 16px;
+
+
+
+}
+
+#loginHeader{
+	margin-bottom: 20px;
+	margin-top: 40px;
+	font-size: 30px;
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-weight: 500;
+	line-height: 1.1;
+	width:300px;
+	height:33px;
+}
+
+.loginInput{
+	margin-bottom: -1px;
+	border-bottom-left-radius: 0;
+	border-bottom-right-radius: 0;
+	position: relative;
+	font-size: 16px;
+	height: auto;
+	padding: 10px;
+	width: 74%;
+	box-sizing: border-box;
+	line-height: 1.428571429;
+	color: #555555;
+	vertical-align: middle;
+	background-color: #ffffff;
+	background-image: none;
+	border: 1px solid #cccccc;
+	border-radius: 4px;
+	-webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+	box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+	-webkit-transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
+	transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
+
+}
+
+.img-rounded{
+	border-radius: 6px;
+}
+
+#yanzm{
+	margin-left: 6px;
+	vertical-align: middle;
+}
+
+#log_button{
+	font-size: 22px;
+	color: #ffffff;
+	background-color: #5bc0de;
+	border-color: #46b8da;
+	cursor: pointer;
+	padding: 10px 16px;
+	line-height: 1.33;
+	border-radius: 6px;
+	border: 1px solid transparent;
+	width: 74%;
+	margin-top:8px;
+}
+
+#log_button:hover{
+	background-color: #3ab3d7;
+	border-color:#157997;
+}
+
+
+#log_nameError,#log_pswError,#log_codeError{
+	font-size: 13px;
+	color: #fff;
+	text-shadow: 0 1px 1px rgba(0,0,0,.15);
+	padding: 10px;
+	border-radius: 4px;
+	color: #fff;
+	text-shadow: 0 1px 1px rgba(0,0,0,.15);
+	background: url(../images/log_error.png) 2px 8px no-repeat, rgba(0,0,0,.1);
+	box-shadow: 0 1px 1px rgba(0,0,0,.1) inset,0 1px 0 rgba(255,255,255,.15);
+	padding-left: 18px;
+}
