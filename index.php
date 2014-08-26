@@ -39,16 +39,16 @@ $rowsuser=mysql_fetch_row($arruser);
   				<div id='leftTitle'>菜单</div>
     			<li><span class="head">信息查询</span>
        				<ul class='nav'>
-				        <li><a href="select.php" target="rightFrame">图书检索</a></li>
-				        <li><a href="lentinfo.php" target="rightFrame">借阅情况</a></li>
+				        <li><a href="select.php" id='searchBook' >图书检索</a></li>
+				        <li><a href="lentinfo.php" id='lentInfo' >借阅情况</a></li>
 
       				</ul>
     			</li>
     			<li> <span class="head">个人设置</span>
       				<ul class='nav'>
-				        <li><a href="userinfo.php" target="rightFrame">个人信息</a></li>
-				        <li><a href="aboutUser.php" target="rightFrame">信息更改</a></li>
-				        <li><a href="user_psw.php" target="rightFrame">密码更改</a></li>
+				        <li><a href="userinfo.php" id='userInfo' >个人信息</a></li>
+				        <li><a href="aboutUser.php" id='aboutUser' >信息更改</a></li>
+				        <li><a href="user_psw.php" id='userPsw' >密码更改</a></li>
       				</ul>
     			</li>
   			</ul>
