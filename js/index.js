@@ -28,21 +28,21 @@ function selectShow(){
 }
 
 function returnLBook(element){
-    var canvas=document.getElementById('lentinfoWrap');
+    var canvas='';
     returnBtn=new MyLibrary();
     returnBtn.grabFilePost('indexCheck.php',canvas,'bookid='+element+'&returnbook=return');
     return false;
 }
 
 function lentBook(element){
-    var canvas=document.getElementById('checkshow');
+    var canvas='';
     lentBtn=new MyLibrary();
     lentBtn.grabFilePost('indexCheck.php',canvas,'bookid='+element+'&lentbook=lent');
     return false;
 }
 
 function returnSBook(element){
-    var canvas=document.getElementById('checkshow');
+    var canvas='';
     returnBtn=new MyLibrary();
     returnBtn.grabFilePost('indexCheck.php',canvas,'bookid='+element+'&returnbook=return');
     return false;
@@ -81,12 +81,12 @@ function check(){
 }
 
 function changePsw(){
-  var canvas=document.getElementById('changeArea');
+  var canvas="";
   var password=encodeURI(document.getElementById('password').value);
   var password1=encodeURI(document.getElementById('password1').value);
   var password2=encodeURI(document.getElementById('password2').value);
-  var data='password='+String(password)+
-  '&password1='+String(password1)+'&password2='+String(password2);
+  var data='passwordo='+String(password)+
+  '&passwordf='+String(password1)+'&passwords='+String(password2);
   changeP=new MyLibrary();
   changeP.grabFilePost('indexcheck.php',canvas,data);
   return false;
