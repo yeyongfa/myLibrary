@@ -25,7 +25,7 @@ include("config.php");
 				$now = date("Y-m-d");
 				$bookid=$_POST['bookid'];
 				$userid=$_SESSION['userid'];
-				$sql1 = "select * from gdutbooks where bookid='".$bookid."'";
+				$sql1 = "select * from gdutbookss where bookid='".$bookid."'";
 				$sql2 = "select * from gdutuser where userid='".$userid."'";
 			    $rs1=mysql_query($sql1);
 			    $rs2=mysql_query($sql2);
@@ -38,7 +38,7 @@ include("config.php");
 				$press=$rows1['press'];
 				$lendsql="insert into userlent(id,bookid, bookname,type,author,press, userid,username, lentdate) values(NULL,'$bookid','$bookname','$type','$author','$press','$userid','$username','$now')";
 				mysql_query($lendsql,$conn) or die ("操作失败：".mysql_error());
-				mysql_query("update gdutbooks set lent=lent+1 where bookid='$bookid'",$conn);
+				mysql_query("update gdutbookss set lent=lent+1 where bookid='$bookid'",$conn);
 				echo "alert('借阅成功');document.getElementById('lentInfo').onclick();";
 			}
 		}
@@ -56,7 +56,7 @@ include("config.php");
 		$returnsql="delete from userlent where bookid='$bookid' and userid=".$_SESSION['userid'];
 		mysql_query($returnsql,$conn) or die ("删除借书记录失败：".mysql_error());
 		//在book表中增加一本现存书数量
-		$booksql="update gdutbooks set lent=lent-1 where bookid='$bookid'";
+		$booksql="update gdutbookss set lent=lent-1 where bookid='$bookid'";
 		mysql_query($booksql,$conn) or die ("更新已借数量失败：".mysql_error());
 
 		echo "alert('还书成功');document.getElementById('lentInfo').onclick();";
