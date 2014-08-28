@@ -62,10 +62,10 @@ include("config.php");
 		echo "alert('还书成功');document.getElementById('lentInfo').onclick();";
 	};
 
-$userid=$_SESSION["userid"];
-$sql="select * from gdutuser where userid='$userid'";
-$rs=mysql_query($sql);
-$rows=mysql_fetch_assoc($rs);
+	$userid=$_SESSION["userid"];
+	$sql="select * from gdutuser where userid='$userid'";
+	$rs=mysql_query($sql);
+	$rows=mysql_fetch_assoc($rs);
 
 	if($_POST["passwordf"]){
 			if($rows["password"]==md5($_POST["passwordo"])){
